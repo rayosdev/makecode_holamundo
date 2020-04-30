@@ -16,22 +16,19 @@ f 4 5 5 5 5 5 5 5 5 5 5 5 5 5 f
 . f f f 5 5 5 5 5 5 5 5 5 5 f f 
 . . . f f f f f f f f f f f f . 
 `, SpriteKind.Player)
-let xpos = 10
-let yPos = 40
+controller.moveSprite(PlayerSprit, 100, 100)
 // Movment
 game.onUpdate(function () {
     if (PlayerSprit.x > scene.screenWidth()) {
-        PlayerSprit.x += 0
+        PlayerSprit.x = 0
     }
-    if (xpos < 0) {
-        xpos = scene.screenWidth()
+    if (PlayerSprit.x < 0) {
+        PlayerSprit.x = scene.screenWidth()
     }
-    if (yPos > scene.screenHeight()) {
-        yPos = 0
+    if (PlayerSprit.y > scene.screenHeight()) {
+        PlayerSprit.y = 0
     }
-    if (0 < 0) {
-        yPos = scene.screenHeight()
+    if (PlayerSprit.y < 0) {
+        PlayerSprit.y = scene.screenHeight()
     }
-    PlayerSprit.x += controller.dx()
-    PlayerSprit.y += controller.dy()
 })
